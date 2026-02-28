@@ -35,7 +35,7 @@ export default function Home() {
           <p className="text-xl text-gray-400 max-w-2xl leading-relaxed mb-10">
             Computer Science student at <span className="text-white font-bold">MACE</span>. 
             Passionate about <span className="text-white font-bold">Flutter</span> development, 
-            <span className="text-white font-bold">IoT</span> integration, and solving complex problems with code[cite: 10, 47].
+            <span className="text-white font-bold">IoT</span> integration, and solving complex problems with code.
           </p>
           <div className="flex flex-wrap justify-center md:justify-start gap-5">
             <a href="/RESUME/Resume (3).pdf" target="_blank" className="bg-white text-black px-8 py-4 rounded-2xl font-bold hover:scale-105 transition-all flex items-center gap-2">
@@ -63,12 +63,12 @@ export default function Home() {
               <h3 className="text-2xl font-bold italic">Flutter Intern</h3>
               <p className="text-blue-500 font-bold">ICT Academy of Kerala</p>
             </div>
-            <span className="text-xs font-bold text-gray-500 px-3 py-1 bg-white/5 rounded-lg">JAN 2025 — PRESENT [cite: 16]</span>
+            <span className="text-xs font-bold text-gray-500 px-3 py-1 bg-white/5 rounded-lg">JAN 2025 — PRESENT </span>
           </div>
           <ul className="space-y-4 text-gray-400">
-            <li className="flex gap-3"><span>▹</span> <span className="text-white font-medium">Optimized</span> cross-platform mobile application modules, increasing UI responsiveness by 15%[cite: 17].</li>
-            <li className="flex gap-3"><span>▹</span> <span className="text-white font-medium">Architected</span> real-time state management systems to ensure a seamless and scalable user experience[cite: 18].</li>
-            <li className="flex gap-3"><span>▹</span> <span className="text-white font-medium">Collaborated</span> with industry mentors to implement standard Agile development lifecycles[cite: 19].</li>
+            <li className="flex gap-3"><span>▹</span> <span className="text-white font-medium">Optimized</span> cross-platform mobile application modules, increasing UI responsiveness by 15%.</li>
+            <li className="flex gap-3"><span>▹</span> <span className="text-white font-medium">Architected</span> real-time state management systems to ensure a seamless and scalable user experience.</li>
+            <li className="flex gap-3"><span>▹</span> <span className="text-white font-medium">Collaborated</span> with industry mentors to implement standard Agile development lifecycles.</li>
           </ul>
         </div>
       </section>
@@ -83,7 +83,7 @@ export default function Home() {
             <h4 className="text-xl font-bold mb-2">Hirepoly - Placement Portal</h4>
             <p className="text-gray-500 text-sm mb-4">PHP • SQL • Bootstrap</p>
             <p className="text-gray-400 leading-relaxed mb-6">
-              <span className="text-white font-medium">Constructed</span> a full-stack campus placement portal that automated recruiter interactions for 500+ users[cite: 58].
+              <span className="text-white font-medium">Constructed</span> a full-stack campus placement portal that automated recruiter interactions for 500+ users.
             </p>
           </div>
           <div className="p-8 rounded-3xl bg-white/[0.02] border border-white/[0.05]">
