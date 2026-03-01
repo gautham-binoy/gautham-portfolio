@@ -16,7 +16,7 @@ export default function Home() {
   const prizes = [
     { title: '1st Place: Tech Arena', event: 'Takshak National Level Tech Fest', path: '/RESUME/PRIZES/tech-arena(Takshak national level tech fest MA college) 1st .png' },
     { title: '1st Place: Clash of Codes', event: 'Coding Competition', path: '/RESUME/PRIZES/clash-of-codes-1st.jpg' },
-    { title: '1st Place: Kryptos Hardware1', event: 'Hackathon', path: '/RESUME/PRIZES/kryptos-hardware-hackathon-1st.jpg' },
+    { title: '1st Place: Kryptos Hardware', event: 'Hackathon', path: '/RESUME/PRIZES/kryptos-hardware-hackathon-1st.jpg' },
   ];
 
   return (
