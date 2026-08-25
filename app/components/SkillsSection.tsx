@@ -15,6 +15,8 @@ const SKILLS = [
   { label: "MySQL", color: "#3b82f6" },
   { label: "IoT", color: "#8b5cf6" },
   { label: "Git", color: "#ef4444" },
+  { label: "Linux", color: "#fbbf24" },
+  { label: "Bash", color: "#fbbf24" },
   { label: "Bootstrap", color: "#a78bfa" },
 ];
 

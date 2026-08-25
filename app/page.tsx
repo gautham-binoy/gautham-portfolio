@@ -13,6 +13,10 @@ import {
   FaArrowDown,
   FaCode,
   FaBriefcase,
+  FaGooglePlay,
+  FaLinux,
+  FaHandshake,
+  FaMobileAlt,
 } from "react-icons/fa";
 import Navbar from "./components/Navbar";
 import ProjectCard from "./components/ProjectCard";
@@ -256,9 +260,11 @@ export default function Home() {
               texts={[
                 "Flutter Developer",
                 "CS Student at MACE",
+                "Published App Developer 🚀",
+                "Freelance Dev for Clients",
                 "IoT Enthusiast",
                 "Hackathon Champion 🏆",
-                "Problem Solver",
+                "Linux Enthusiast 🐧",
               ]}
             />
           </motion.div>
@@ -378,17 +384,18 @@ export default function Home() {
             maxWidth: "1200px",
             margin: "0 auto",
             display: "grid",
-            gridTemplateColumns: "repeat(4, 1fr)",
+            gridTemplateColumns: "repeat(5, 1fr)",
             gap: "2rem",
             textAlign: "center",
           }}
           className="stats-grid"
         >
           {[
+            { value: 1, suffix: "", label: "Published App 🚀" },
             { value: 3, suffix: "+", label: "Competition Wins" },
             { value: 7, suffix: "+", label: "Certifications" },
-            { value: 500, suffix: "+", label: "Users Served" },
-            { value: 15, suffix: "%", label: "UI Performance Boost" },
+            { value: 500, suffix: "+", label: "App Users" },
+            { value: 15, suffix: "%", label: "Performance Boost" },
           ].map(({ value, suffix, label }) => (
             <div key={label}>
               <div
@@ -411,7 +418,8 @@ export default function Home() {
           ))}
         </div>
         <style>{`
-          @media (max-width: 640px) { .stats-grid { grid-template-columns: repeat(2,1fr) !important; } }
+          @media (max-width: 900px) { .stats-grid { grid-template-columns: repeat(3,1fr) !important; } }
+          @media (max-width: 540px) { .stats-grid { grid-template-columns: repeat(2,1fr) !important; } }
         `}</style>
       </section>
 
@@ -592,25 +600,102 @@ export default function Home() {
           <SectionHeading
             number="02. SKILLS"
             title="My Tech Stack"
-            subtitle="Languages, frameworks, and tools I use to bring ideas to life."
+            subtitle="Languages, frameworks, and tools I use — from Flutter & Firebase to Linux & IoT."
           />
           <SkillsSection />
         </div>
       </section>
 
-      {/* ─── PROJECTS ─────────────────────────────────────────────────────── */}
+      {/* ─── PUBLISHED APP ─────────────────────────────────────────────────── */}
       <section id="projects" style={{ padding: "7rem 1.5rem" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <SectionHeading
             number="03. PROJECTS"
-            title="Key Projects"
-            subtitle="Things I've built that I'm proud of."
+            title="What I've Built"
+            subtitle="From published Play Store apps to client projects and open-source work."
           />
 
+          {/* Published App — Featured Card */}
+          <motion.a
+            href="https://play.google.com/store/apps/details?id=com.gauthambinoy.middleman_crm"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            style={{
+              display: "block",
+              textDecoration: "none",
+              color: "inherit",
+              marginBottom: "1.5rem",
+              position: "relative",
+              borderRadius: "24px",
+              overflow: "hidden",
+              background: "linear-gradient(135deg, rgba(34,197,94,0.06) 0%, rgba(6,182,212,0.04) 50%, rgba(3,7,18,0.6) 100%)",
+              border: "1px solid rgba(34,197,94,0.2)",
+              padding: "2.5rem 2.5rem",
+              transition: "border-color 0.3s ease, transform 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLElement).style.borderColor = "rgba(34,197,94,0.5)";
+              (e.currentTarget as HTMLElement).style.transform = "translateY(-4px)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLElement).style.borderColor = "rgba(34,197,94,0.2)";
+              (e.currentTarget as HTMLElement).style.transform = "none";
+            }}
+          >
+            {/* Background glow */}
+            <div style={{ position: "absolute", top: "-30%", right: "-5%", width: "350px", height: "350px", borderRadius: "50%", background: "#22c55e", opacity: 0.04, filter: "blur(80px)", pointerEvents: "none" }} />
+            <div style={{ position: "absolute", bottom: "-20%", left: "20%", width: "250px", height: "250px", borderRadius: "50%", background: "#06b6d4", opacity: 0.04, filter: "blur(60px)", pointerEvents: "none" }} />
+
+            <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", flexWrap: "wrap", gap: "1.5rem" }}>
+              <div style={{ flex: 1, minWidth: "280px" }}>
+                {/* Badges row */}
+                <div style={{ display: "flex", gap: "0.625rem", flexWrap: "wrap", marginBottom: "1.25rem" }}>
+                  <span style={{ display: "inline-flex", alignItems: "center", gap: "0.375rem", padding: "0.3rem 0.875rem", borderRadius: "999px", fontSize: "0.7rem", fontFamily: "var(--font-mono)", fontWeight: 700, background: "rgba(34,197,94,0.12)", border: "1px solid rgba(34,197,94,0.3)", color: "#22c55e" }}>
+                    <span style={{ width: "5px", height: "5px", borderRadius: "50%", background: "#22c55e", boxShadow: "0 0 6px #22c55e", display: "inline-block" }} />
+                    LIVE ON PLAY STORE
+                  </span>
+                  <span style={{ display: "inline-flex", alignItems: "center", gap: "0.375rem", padding: "0.3rem 0.875rem", borderRadius: "999px", fontSize: "0.7rem", fontFamily: "var(--font-mono)", fontWeight: 700, background: "rgba(59,130,246,0.1)", border: "1px solid rgba(59,130,246,0.25)", color: "#3b82f6" }}>
+                    SOLO PROJECT
+                  </span>
+                </div>
+
+                <h3 style={{ fontSize: "clamp(1.5rem, 3vw, 2.25rem)", fontWeight: 800, letterSpacing: "-0.03em", marginBottom: "0.5rem", background: "linear-gradient(135deg, #fff 0%, #94a3b8 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text" }}>
+                  KNOT CRM
+                </h3>
+                <p style={{ color: "#22c55e", fontFamily: "var(--font-mono)", fontSize: "0.8125rem", marginBottom: "1.25rem" }}>com.gauthambinoy.middleman_crm</p>
+
+                <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "1rem", lineHeight: 1.75, maxWidth: "600px", marginBottom: "1.5rem" }}>
+                  A full-featured <strong style={{ color: "rgba(255,255,255,0.85)" }}>CRM app for middlemen &amp; client managers</strong> — track leads, manage client pipelines, follow up on deals, and close more business. Built entirely in Flutter with Firebase backend.
+                </p>
+
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "1.5rem" }}>
+                  {["Flutter", "Dart", "Firebase", "Firestore", "CRM", "Mobile App"].map((t) => (
+                    <span key={t} style={{ padding: "0.25rem 0.75rem", borderRadius: "999px", fontSize: "0.7rem", fontFamily: "var(--font-mono)", fontWeight: 600, background: "rgba(6,182,212,0.1)", border: "1px solid rgba(6,182,212,0.25)", color: "#06b6d4" }}>{t}</span>
+                  ))}
+                </div>
+
+                <div style={{ display: "inline-flex", alignItems: "center", gap: "0.625rem", padding: "0.75rem 1.5rem", borderRadius: "12px", background: "linear-gradient(135deg, #22c55e, #16a34a)", color: "white", fontWeight: 700, fontSize: "0.9rem", boxShadow: "0 4px 20px rgba(34,197,94,0.3)" }}>
+                  <FaGooglePlay />
+                  View on Play Store
+                </div>
+              </div>
+
+              {/* Phone mockup area */}
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "center", width: "120px", height: "120px", borderRadius: "28px", background: "linear-gradient(135deg, rgba(34,197,94,0.15), rgba(6,182,212,0.15))", border: "1px solid rgba(34,197,94,0.2)", flexShrink: 0 }}>
+                <FaMobileAlt style={{ fontSize: "3rem", color: "#22c55e", filter: "drop-shadow(0 0 12px rgba(34,197,94,0.5))" }} />
+              </div>
+            </div>
+          </motion.a>
+
+          {/* Other projects grid */}
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
               gap: "1.5rem",
             }}
           >
@@ -630,11 +715,133 @@ export default function Home() {
             />
             <ProjectCard
               number="03 /"
-              title="Flutter Mobile App"
+              title="Flutter Internship App"
               tags={["Flutter", "Dart", "Firebase"]}
               description="Cross-platform mobile application with real-time state management, achieving a 15% improvement in UI responsiveness. Built during internship at ICT Academy of Kerala."
               accentColor="#06b6d4"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* ─── FREELANCE / CLIENT WORK ──────────────────────────────────────── */}
+      <section
+        id="freelance"
+        style={{
+          padding: "7rem 1.5rem",
+          background: "rgba(255,255,255,0.01)",
+          borderTop: "1px solid rgba(255,255,255,0.04)",
+          borderBottom: "1px solid rgba(255,255,255,0.04)",
+        }}
+      >
+        <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+          <SectionHeading
+            number="03.5 CLIENT WORK"
+            title="Freelance & Client Projects"
+            subtitle="Building real products for real clients — I'm open for freelance work."
+          />
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.5rem" }}>
+            {/* Available for hire card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              style={{
+                padding: "2rem",
+                borderRadius: "20px",
+                background: "linear-gradient(135deg, rgba(139,92,246,0.07) 0%, rgba(3,7,18,0.6) 100%)",
+                border: "1px solid rgba(139,92,246,0.2)",
+                position: "relative",
+                overflow: "hidden",
+              }}
+            >
+              <div style={{ position: "absolute", top: "-20%", right: "-10%", width: "180px", height: "180px", borderRadius: "50%", background: "#8b5cf6", opacity: 0.06, filter: "blur(50px)" }} />
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem" }}>
+                <FaHandshake style={{ color: "#8b5cf6", fontSize: "1.5rem" }} />
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", color: "#8b5cf6", fontWeight: 700 }}>ACCEPTING CLIENTS</span>
+              </div>
+              <h3 style={{ fontSize: "1.375rem", fontWeight: 700, marginBottom: "0.75rem", color: "white" }}>Custom App Development</h3>
+              <p style={{ color: "rgba(255,255,255,0.5)", lineHeight: 1.7, fontSize: "0.9375rem", marginBottom: "1.25rem" }}>
+                I build <strong style={{ color: "rgba(255,255,255,0.8)" }}>cross-platform mobile apps</strong> for businesses — CRMs, e-commerce, booking systems, and more using Flutter &amp; Firebase.
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "1.5rem" }}>
+                {["Flutter", "Firebase", "REST APIs", "UI/UX"].map((t) => (
+                  <span key={t} style={{ padding: "0.2rem 0.65rem", borderRadius: "999px", fontSize: "0.7rem", fontFamily: "var(--font-mono)", fontWeight: 600, background: "rgba(139,92,246,0.12)", border: "1px solid rgba(139,92,246,0.25)", color: "#a78bfa" }}>{t}</span>
+                ))}
+              </div>
+              <a
+                href="mailto:gautham@example.com"
+                style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", padding: "0.625rem 1.25rem", borderRadius: "10px", background: "rgba(139,92,246,0.15)", border: "1px solid rgba(139,92,246,0.3)", color: "#a78bfa", fontWeight: 600, fontSize: "0.875rem", textDecoration: "none", transition: "all 0.2s ease" }}
+                onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "rgba(139,92,246,0.25)"; }}
+                onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "rgba(139,92,246,0.15)"; }}
+              >
+                <FaEnvelope size={12} /> Get in touch
+              </a>
+            </motion.div>
+
+            {/* KNOT CRM as client-style card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+              style={{
+                padding: "2rem",
+                borderRadius: "20px",
+                background: "linear-gradient(135deg, rgba(59,130,246,0.07) 0%, rgba(3,7,18,0.6) 100%)",
+                border: "1px solid rgba(59,130,246,0.2)",
+                position: "relative",
+                overflow: "hidden",
+              }}
+            >
+              <div style={{ position: "absolute", top: "-20%", right: "-10%", width: "180px", height: "180px", borderRadius: "50%", background: "#3b82f6", opacity: 0.06, filter: "blur(50px)" }} />
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem" }}>
+                <FaCode style={{ color: "#3b82f6", fontSize: "1.25rem" }} />
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", color: "#3b82f6", fontWeight: 700 }}>SOLO-PUBLISHED</span>
+              </div>
+              <h3 style={{ fontSize: "1.375rem", fontWeight: 700, marginBottom: "0.75rem", color: "white" }}>KNOT CRM — End-to-End Delivery</h3>
+              <p style={{ color: "rgba(255,255,255,0.5)", lineHeight: 1.7, fontSize: "0.9375rem", marginBottom: "1.25rem" }}>
+                Designed, built, and launched a <strong style={{ color: "rgba(255,255,255,0.8)" }}>complete CRM product</strong> from scratch — from UI/UX wireframes to Play Store publication, demonstrating full product ownership.
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                {["Product Design", "Flutter", "Firebase", "Play Store"].map((t) => (
+                  <span key={t} style={{ padding: "0.2rem 0.65rem", borderRadius: "999px", fontSize: "0.7rem", fontFamily: "var(--font-mono)", fontWeight: 600, background: "rgba(59,130,246,0.1)", border: "1px solid rgba(59,130,246,0.25)", color: "#60a5fa" }}>{t}</span>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Linux & Open Source card */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              style={{
+                padding: "2rem",
+                borderRadius: "20px",
+                background: "linear-gradient(135deg, rgba(251,191,36,0.06) 0%, rgba(3,7,18,0.6) 100%)",
+                border: "1px solid rgba(251,191,36,0.15)",
+                position: "relative",
+                overflow: "hidden",
+              }}
+            >
+              <div style={{ position: "absolute", top: "-20%", right: "-10%", width: "180px", height: "180px", borderRadius: "50%", background: "#f59e0b", opacity: 0.05, filter: "blur(50px)" }} />
+              <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "1rem" }}>
+                <FaLinux style={{ color: "#fbbf24", fontSize: "1.5rem" }} />
+                <span style={{ fontFamily: "var(--font-mono)", fontSize: "0.75rem", color: "#fbbf24", fontWeight: 700 }}>NEW FOCUS AREA</span>
+              </div>
+              <h3 style={{ fontSize: "1.375rem", fontWeight: 700, marginBottom: "0.75rem", color: "white" }}>Linux & Systems</h3>
+              <p style={{ color: "rgba(255,255,255,0.5)", lineHeight: 1.7, fontSize: "0.9375rem", marginBottom: "1.25rem" }}>
+                Expanding into <strong style={{ color: "rgba(255,255,255,0.8)" }}>Linux system administration</strong>, shell scripting, and low-level tooling — bridging the gap between mobile development and systems programming.
+              </p>
+              <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
+                {["Linux", "Bash", "Shell Scripting", "Systems"].map((t) => (
+                  <span key={t} style={{ padding: "0.2rem 0.65rem", borderRadius: "999px", fontSize: "0.7rem", fontFamily: "var(--font-mono)", fontWeight: 600, background: "rgba(251,191,36,0.1)", border: "1px solid rgba(251,191,36,0.2)", color: "#fbbf24" }}>{t}</span>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
