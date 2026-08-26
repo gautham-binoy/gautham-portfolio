@@ -44,6 +44,14 @@ const prizes = [
   { title: "1st Place: Kryptos Hardware", event: "Hardware Hackathon", path: "/RESUME/PRIZES/kryptos-hardware-hackathon-1st.jpg", color: "#8b5cf6" },
 ];
 
+// ── Google Analytics Event Helper ──────────────────────────────────────────
+
+const trackEvent = (action: string, params?: Record<string, unknown>) => {
+  if (typeof window !== "undefined" && typeof (window as unknown as { gtag?: Function }).gtag === "function") {
+    (window as unknown as { gtag: Function }).gtag("event", action, params);
+  }
+};
+
 // ── Typewriter Effect ──────────────────────────────────────────────────────────
 
 function TypewriterText({ texts }: { texts: string[] }) {
@@ -279,6 +287,7 @@ export default function Home() {
             <a
               href="/RESUME/Resume (3).pdf"
               target="_blank"
+              onClick={() => trackEvent("download_resume", { location: "hero" })}
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -307,14 +316,15 @@ export default function Home() {
             </a>
             <div style={{ display: "flex", gap: "0.75rem" }}>
               {[
-                { icon: <FaLinkedin size={18} />, href: "https://linkedin.com/in/gautham-binoy", color: "#0077b5" },
-                { icon: <FaGithub size={18} />, href: "https://github.com/gautham-binoy", color: "#ffffff" },
-                { icon: <FaEnvelope size={18} />, href: "mailto:gautham@example.com", color: "#3b82f6" },
-              ].map(({ icon, href, color }, i) => (
+                { name: "linkedin", icon: <FaLinkedin size={18} />, href: "https://linkedin.com/in/gautham-binoy", color: "#0077b5" },
+                { name: "github", icon: <FaGithub size={18} />, href: "https://github.com/gautham-binoy", color: "#ffffff" },
+                { name: "email", icon: <FaEnvelope size={18} />, href: "mailto:gautham@example.com", color: "#3b82f6" },
+              ].map(({ name, icon, href, color }, i) => (
                 <a
                   key={i}
                   href={href}
                   target="_blank"
+                  onClick={() => trackEvent("social_click", { platform: name, location: "hero" })}
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
@@ -620,6 +630,7 @@ export default function Home() {
             href="https://play.google.com/store/apps/details?id=com.gauthambinoy.middleman_crm"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent("open_play_store", { app: "KNOT CRM", id: "com.gauthambinoy.middleman_crm" })}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
